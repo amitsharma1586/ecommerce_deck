@@ -10,10 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="store">
-  <div id="banner">
-    <%= image_tag("https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/logo.png") %>
-    <%= @page_title || "Pragmatic Bookshelf" %>
-  </div>
+  
   <div id="columns">
     <div id="side">
       <% if @cart %>
@@ -21,11 +18,6 @@
           <%= render @cart %>
         <% end %>
       <% end %>
-
-      <a href="http://www....">Home</a><br />
-      <a href="http://www..../faq">Questions</a><br />
-      <a href="http://www..../news">News</a><br />
-      <a href="http://www..../contact">Contact</a><br />
     </div>
     <div id="main">
       <%= yield %>

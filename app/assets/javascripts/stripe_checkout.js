@@ -29,15 +29,10 @@ stripe_customer = {
   },
   handleStripeResponse: function(status, response) {
     if (status === 200) {
-      console.log("11111")
-     alert(response.id);
-      $('#order_stripe_token').val(response.id);
-      // $('#order_stripe_credit_card_id').val(response.card.id);
+      $('#order_stripe_customer_token').val(response.id);
       $('#stripe_error').text("")
       $('#new_order').submit();
     } else {
-      console.log("22222")
-      // alert(response.error.message);
       $('#stripe_error').text(response.error.message);
       $('input[type=submit]').attr('disabled', false);
     }

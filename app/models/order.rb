@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
 
-attr_accessor :cvv, :card_number, :stripe_token, :exp_month, :exp_year, :stripe_credit_card_id
+attr_accessor :cvv, :card_number, :stripe_customer_token, :exp_month, :exp_year, :stripe_credit_card_id
 
 PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
   # ...
@@ -21,7 +21,7 @@ PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
       begin
         customer = Stripe::Customer.create(
           :email => self.email,
-          :source  => self.stripe_token
+          :source  => self.stripe_customer_token
         )
         self.stripe_customer_token = customer.id
         

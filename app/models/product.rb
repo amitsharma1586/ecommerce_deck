@@ -2,13 +2,15 @@ class Product < ActiveRecord::Base
 	
   default_scope { order('title') } 
   
-  # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
-  #  :url  => "/assets/products/:id/:style/:basename.:extension",
-  #  :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
+   :url  => "/assets/products/:id/:style/:basename.:extension",
+   :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
-  # validates_attachment_presence :image
-  # validates_attachment_size :image, :less_than => 5.megabytes
-  # validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_presence :image
+  
+  validates_attachment_size :image, :less_than => 5.megabytes
+  
+  validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
   
   has_many :line_items
 	has_many :orders, :through => :line_items
@@ -16,9 +18,12 @@ class Product < ActiveRecord::Base
 
 	
 	validates :title, :description, :presence => true
-	validates :price, :numericality => {:greater_than_or_equal_to => 0.01} 
-	validates :title, :uniqueness => true
-    # validates :image_url, :format => {:with=> %r{\.(gif|jpg|png)\z}i,:message => 'must be a URL for GIF, JPG or PNG image.' }
+	
+  validates :price, :numericality => {:greater_than_or_equal_to => 0.01} 
+	
+  validates :title, :uniqueness => true
+  
+  # validates :image_url, :format => {:with=> %r{\.(gif|jpg|png)\z}i,:message => 'must be a URL for GIF, JPG or PNG image.' }
 
     private
 

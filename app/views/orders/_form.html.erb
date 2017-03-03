@@ -26,8 +26,8 @@
     <%#= f.text_field :stripe_token %>
     <%#= f.text_field :stripe_credit_card_id %>
   </div>
-  <%=f.hidden_field :stripe_token %> 
-  <% if @order.stripe_token.present? %>
+  <%=f.hidden_field :stripe_customer_token %> 
+  <% if @order.stripe_customer_token.present? %>
     Credit card has been provided
   <% else %>
     <div class="field">
