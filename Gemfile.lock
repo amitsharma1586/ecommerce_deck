@@ -90,7 +90,6 @@ GEM
     minitest (5.10.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
-    mysql2 (0.3.21)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     pg (0.18.1)
@@ -174,7 +173,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (~> 0.3.18)
   paperclip!
   pg (= 0.18.1)
   pry
