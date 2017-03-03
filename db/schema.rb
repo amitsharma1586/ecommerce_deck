@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302161234) do
+ActiveRecord::Schema.define(version: 20170302133259) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,41 +22,34 @@ ActiveRecord::Schema.define(version: 20170302161234) do
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.integer  "product_id", limit: 4
-    t.integer  "cart_id",    limit: 4
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "quantity",   limit: 4, default: 1
-    t.integer  "order_id",   limit: 4
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "quantity",   default: 1
+    t.integer  "order_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "name",                  limit: 255
-    t.text     "address",               limit: 65535
-    t.string   "email",                 limit: 255
-    t.string   "pay_type",              limit: 255
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "stripe_customer_token", limit: 255
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "pay_type"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "stripe_customer_token"
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.text     "description",        limit: 65535
-    t.string   "image_url",          limit: 255
-    t.decimal  "price",                            precision: 8, scale: 2
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.decimal  "price",              precision: 8, scale: 2
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
 
