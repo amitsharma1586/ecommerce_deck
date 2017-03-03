@@ -28,6 +28,14 @@ test:
   <<: *default
   database: ecommerce_deck_test
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+  prepared_statements: false
+  database: ecommerce_deck_production
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -54,7 +62,4 @@ test:
 #   password: <%= ENV['ECOMMERCE_DECK_DATABASE_PASSWORD'] %>
 
 
-  production:
-  <<: *default
-  adapter: postgresql
-  database: db/production.mysql2
+  
