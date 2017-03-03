@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
     if @order.buy_with_stripe
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
-      Notifier.order_received(@order).deliver
+      # Notifier.order_received(@order).deliver
       format.html { redirect_to(thank_you_order_path(@order), :notice =>'Thank you for your order.') }
       format.xml { render :xml => @order, :status => :created,:location => @order }
     else

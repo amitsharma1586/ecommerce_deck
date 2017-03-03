@@ -36,16 +36,16 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => "domain.of.sender.net",
-    :authentication => "plain",
-    :user_name => "amit.diasmca@gmail.com",
-    :password => "dl14cb1811",
-    :enable_starttls_auto => true
-}
+#   config.action_mailer.delivery_method = :smtp
+#   config.action_mailer.smtp_settings = {
+#     :address => "smtp.gmail.com",
+#     :port => 587,
+#     :domain => "domain.of.sender.net",
+#     :authentication => "plain",
+#     :user_name => "amit.diasmca@gmail.com",
+    
+#     :enable_starttls_auto => true
+# }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
