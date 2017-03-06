@@ -7,41 +7,48 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Product.delete_all
 #...
-Product.create(:title => 'Programming Ruby 1.9',
-  :description =>
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
+@product = Product.new(title: 'Programming Ruby 1.9',
+  description:
+    %{
+        Ruby 1.9 is the fastest growing and most exciting dynamic language
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
-      </p>},
-  :image_url => 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/debug.jpg',
-  :price => 49.50)
+      },
+  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/debug.jpg',
+  price: 49.50)
+@product.save(validate: false)
 
-	Product.create(:title => 'Programming Ruby 1.8',
-	  :description =>
-	    %{<p>
-	        Ruby is the fastest growing and most exciting dynamic language
+@product = Product.new(title: 'Programming Ruby 1.8',
+	  description:
+	    %{
+	        Ruby 1.8 is the fastest growing and most exciting dynamic language
 	        out there. If you need to get working programs delivered fast,
 	        you should add Ruby to your toolbox.
-	      </p>},
-	  :image_url => 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/rtp.jpg',
-	  :price => 49.50)
+	      },
+	  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/rtp.jpg',
+	  price: 49.50)
+@product.save(validate: false)
 
-Product.create(:title => 'Programming Ruby 1.7',
-  :description =>
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
+@product = Product.new(title: 'Programming Ruby 1.7',
+  description:
+    %{
+        Ruby 1.7 is the fastest growing and most exciting dynamic language
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
-      </p>},
-  :image_url => 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/ruby.jpg',
-  :price => 49.50)
-Product.create(:title => 'Programming Ruby 1.6',
-  :description =>
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
+      },
+  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/ruby.jpg',
+  price: 49.50)
+@product.save(validate: false)
+
+@product = Product.new(title: 'Programming Ruby 1.6',
+  description:
+    %{
+        Ruby 1.6 is the fastest growing and most exciting dynamic language
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
-      </p>},
-  :image_url => 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/wd4d.jpg',
-  :price => 49.50)
+      },
+  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/wd4d.jpg',
+  price: 49.50)
+@product.save(validate: false)
+
+
