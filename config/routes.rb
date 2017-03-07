@@ -37,12 +37,9 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  root :to => 'store#index', :as => 'store'
-  resources :products do
-    get :who_bought, :on => :member
-  end
+  root to: 'store#index', as: 'store'
   resources :orders do
-    get :thank_you, :on => :member
+    get :thank_you, on: :member
   end
 
 
