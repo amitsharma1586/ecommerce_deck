@@ -5,22 +5,22 @@
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td>
           <%if product.image_url%>
-          <%= image_tag(product.image_url, :class => 'list_image') %>
+          <%= image_tag(product.image_url, class: 'list_image') %>
           <% else %>
-          <%= image_tag(product.image.url, :class => 'list_image') %>
+          <%= image_tag(product.image.url, class: 'list_image') %>
           <% end %>
         </td>
 
         <td class="list_description">
           <dl>
             <dt><%= product.title %></dt>
-            <dd><%= truncate(strip_tags(product.description),:length => 80) %></dd>
+            <dd><%= truncate(strip_tags(product.description),length: 80) %></dd>
           </dl>
         </td>
         <td class="list_actions">
           <%= link_to 'Show', product %><br/>
           <%= link_to 'Edit', edit_product_path(product) %><br/>
-          <%= link_to 'Destroy', product,:confirm => 'Are you sure?',:method => :delete %>
+          <%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %>
         </td>
       </tr>
     <% end %>

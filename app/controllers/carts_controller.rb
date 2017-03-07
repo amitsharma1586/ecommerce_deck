@@ -10,7 +10,6 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-   
   end
 
   # GET /carts/new
@@ -26,7 +25,6 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(cart_params)
-
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
@@ -68,7 +66,6 @@ class CartsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
       @cart = Cart.find(params[:id])
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

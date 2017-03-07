@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.paginate :page=>params[:page], :per_page => 3
+    @products = Product.paginate page: params[:page], per_page: 3
     
   end
 
@@ -61,16 +61,7 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
-  def who_bought
-    @product = Product.find(params[:id]) 
-    respond_to do |format|
-      format.atom
-      format.xml { render :xml => @product }
-    end
-  end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
