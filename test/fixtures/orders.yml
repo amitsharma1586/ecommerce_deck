@@ -4,10 +4,11 @@ one:
   name: Dave Thomas 
   address: MyText
   email: dave@example.org
-  pay_type: Check
+  stripe_customer_token: 12345
+  
 
 two:
   name: MyString
   address: MyText
   email: MyString
-  pay_type: MyString
+  stripe_customer_token: 12345

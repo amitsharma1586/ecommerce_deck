@@ -22,30 +22,27 @@
   <%= f.label :email %><br />
   <%= f.email_field :email, :size => 40 %>
 </div>
+  
+<%=f.hidden_field :stripe_customer_token %> 
+<% if @order.stripe_customer_token.present? %>
+  Credit card has been provided
+<% else %>
   <div class="field">
-    <%#= f.text_field :stripe_token %>
-    <%#= f.text_field :stripe_credit_card_id %>
+    <%= f.label :card_number, "Credit Card Number" %>
+    <%= f.text_field :card_number, maxlength: 16 %>
   </div>
-  <%=f.hidden_field :stripe_customer_token %> 
-  <% if @order.stripe_customer_token.present? %>
-    Credit card has been provided
-  <% else %>
-    <div class="field">
-      <%= f.label :card_number, "Credit Card Number" %>
-      <%= f.text_field :card_number, maxlength: 16 %>
-    </div>
-    <div class="field">
-      <%= f.label :cvv, "Security Code on Card (CVV)" %>
-      <%= f.text_field :cvv, maxlength: 3 %>
-    </div>
-    <div class="field">
-      <%= f.label :exp_month, "Card Expiration Month" %>
-      <%= f.text_field :exp_month %>
-      <br>
-      <%= f.label :exp_year, "Card Expiration Year" %>
-      <%= f.text_field :exp_year %>
-    </div>
-  <% end %>
+  <div class="field">
+    <%= f.label :cvv, "Security Code on Card (CVV)" %>
+    <%= f.text_field :cvv, maxlength: 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :exp_month, "Card Expiration Month" %>
+    <%= f.text_field :exp_month %>
+    <br>
+    <%= f.label :exp_year, "Card Expiration Year" %>
+    <%= f.text_field :exp_year %>
+  </div>
+<% end %>
 <div id="stripe_error">
   <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
 </div>

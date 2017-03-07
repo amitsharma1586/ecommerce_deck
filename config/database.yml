@@ -8,15 +8,15 @@ default: &default
 
 development:
   <<: *default
-  database: ecommerce_deck_development
+  database: ecommerce_deck_one_development
 
 test:
   <<: *default
-  database: ecommerce_deck__test
+  database: ecommerce_deck_one_test
 
 staging:
   <<: *default
-  database: ecommerce_deck__staging
+  database: ecommerce_deck_staging
 
 production:
   <<: *default
