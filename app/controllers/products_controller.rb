@@ -4,8 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.paginate :page=>params[:page], :per_page => 3
-    
+    @products = Product.paginate :page=>params[:page], per_page: 3
   end
 
   # GET /products/1
@@ -26,7 +25,6 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -61,16 +59,7 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
-  def who_bought
-    @product = Product.find(params[:id]) 
-    respond_to do |format|
-      format.atom
-      format.xml { render :xml => @product }
-    end
-  end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

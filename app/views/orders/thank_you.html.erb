@@ -1,6 +1,5 @@
 <P>Order Confirmation</P><br>
 <p><b>Thank you so much for placing an order with us!</p></b>
-
 <p><b>Confirmation of your order will also be emailed to you shortly.</p></b>
 <b>Order Details</b>
 <table>
@@ -9,10 +8,8 @@
       <th>Item</th>
       <th>Price</th>
       <th>Quantity</th>
-      
     </tr>
   </thead>
-
   <tbody>
   	<%@order.line_items.each do |item|%>
   		<tr>
@@ -21,6 +18,5 @@
         <td><%= item.quantity%></td>
       </tr>
   	<%end%>
-    
   </tbody>
 </table>

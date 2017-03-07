@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use mysql as the database for Active Record
-# gem 'mysql2', '~> 0.3.18'
 
 gem 'pg', '0.18.1'
 
@@ -35,8 +32,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'will_paginate', '~> 3.1.0'
 
 gem 'stripe'
-
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -2,24 +2,21 @@
 <html>
 <head>
   <title>Pragprog Books Online Store</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
-  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
-
-
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://js.stripe.com/v1/', 'application' %>
+  <%= tag :meta, name: 'stripe-key', content: STRIPE_PUBLIC_KEY %>
   <%= csrf_meta_tags %>
 </head>
-<body id="store">
-  
-  <div id="columns">
-    <div id="side">
+<body id='store'>
+  <div id='columns'>
+    <div id='side'>
       <% if @cart %>
-        <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
           <%= render @cart %>
         <% end %>
       <% end %>
     </div>
-    <div id="main">
+    <div id='main'>
       <%= yield %>
     </div>
   </div>
