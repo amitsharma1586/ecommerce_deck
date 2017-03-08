@@ -13,10 +13,9 @@ Product.delete_all
         Ruby 1.9 is the fastest growing and most exciting dynamic language
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
-      },
-  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/debug.jpg',
-  price: 49.50)
-@product.save(validate: false)
+      },price: 49.50)
+@product.image = File.new(Rails.root.join('app', 'assets', 'images', "image1.jpeg"))
+@product.save
 
 @product = Product.new(title: 'Programming Ruby 1.8',
 	  description:
@@ -24,10 +23,9 @@ Product.delete_all
 	        Ruby 1.8 is the fastest growing and most exciting dynamic language
 	        out there. If you need to get working programs delivered fast,
 	        you should add Ruby to your toolbox.
-	      },
-	  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/rtp.jpg',
-	  price: 49.50)
-@product.save(validate: false)
+	      },price: 49.50)
+@product.image = File.new(Rails.root.join('app', 'assets', 'images', "image2.jpeg"))
+@product.save
 
 @product = Product.new(title: 'Programming Ruby 1.7',
   description:
@@ -35,10 +33,9 @@ Product.delete_all
         Ruby 1.7 is the fastest growing and most exciting dynamic language
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
-      },
-  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/ruby.jpg',
-  price: 49.50)
-@product.save(validate: false)
+      },price: 49.50)
+@product.image = File.new(Rails.root.join('app', 'assets', 'images', "image3.jpeg"))
+@product.save
 
 @product = Product.new(title: 'Programming Ruby 1.6',
   description:
@@ -46,9 +43,8 @@ Product.delete_all
         Ruby 1.6 is the fastest growing and most exciting dynamic language
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
-      },
-  image_url: 'https://media.pragprog.com/titles/rails4/code/rails30/depot_b/public/images/wd4d.jpg',
-  price: 49.50)
-@product.save(validate: false)
+      },price: 49.50)
+@product.image = File.new(Rails.root.join('app', 'assets', 'images', "image4.jpeg"))
+@product.save
 
 
