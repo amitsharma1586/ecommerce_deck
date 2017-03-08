@@ -4,11 +4,7 @@
 <h1>Your Ecommerce Catalog</h1>
 <% @products.each do |product| %>
   <div class="entry">
-  <%if product.image_url%>
-  	<%= image_tag(product.image_url, class: 'list_image') %>
-  <% else %>
   	<%= image_tag(product.image.url, class: 'list_image') %>
-  <% end %>
   <h3><%= product.title %></h3>
   <%=sanitize product.description %>
  <div class="price_line">

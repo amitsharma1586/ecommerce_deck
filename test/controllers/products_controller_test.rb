@@ -6,14 +6,10 @@ class ProductsControllerTest < ActionController::TestCase
     @update = {
       :title       => 'Lorem Ipsum',
       :description => 'Wibbles are fun!',
-      :image_url   => 'lorem.jpg',
       :price       => 19.95,
-      :mage_file_name => 'test.jpg',
-      :image_content_type => 'image/jpeg',
-      :image_file_size =>  34632,
-      :image_updated_at => '2017-03-07 08:05:55',
+      :image => Rack::Test::UploadedFile.new(Rails.root.join('test/fixtures/files/testimage.jpeg'), 'image/jpeg')
     }
-  end
+   end
 
   test "should get index" do
     get :index
@@ -26,15 +22,12 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  # test "should create product" do
-  #   assert_difference('Product.count') do
-  #     post :create, :product => @update
-  #   end
-
-  #   assert_redirected_to product_path(assigns(:product))
-  # end
-
-  # ...
+  test "should create product" do
+    assert_difference('Product.count') do
+      post :create, :product => @update
+    end
+    assert_redirected_to product_path(assigns(:product))
+  end
 
   test "should show product" do
     get :show, :id => @product.to_param
@@ -46,18 +39,15 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  # test "should update product" do
-  #   put :update, :id => @product.to_param, :product => @update
-  #   assert_redirected_to product_path(assigns(:product))
-  # end
-
-  # ...
+  test "should update product" do
+    put :update, :id => @product.to_param, :product => @update
+    assert_redirected_to product_path(assigns(:product))
+  end
 
   test "should destroy product" do
     assert_difference('Product.count', -1) do
       delete :destroy, :id => @product.to_param
     end
-
     assert_redirected_to products_path
   end
 end
